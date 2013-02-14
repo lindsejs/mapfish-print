@@ -38,6 +38,7 @@ import org.mapfish.print.config.CustomEnumWrapper;
 import org.mapfish.print.config.DnsHostMatcher;
 import org.mapfish.print.config.Key;
 import org.mapfish.print.config.LocalHostMatcher;
+import org.mapfish.print.config.ParamToCookieSecurity;
 import org.mapfish.print.config.layout.AttributesBlock;
 import org.mapfish.print.config.layout.ColumnDefs;
 import org.mapfish.print.config.layout.ColumnsBlock;
@@ -92,6 +93,8 @@ public class CustomYamlConfig extends YamlConfig {
         transfers.put("basicAuth", BasicAuthSecurity.class.getName());
         // key for signing uris (google API requires this)
         transfers.put("key", Key.class.getName());
+        // will add cookie to request from get parameter
+        transfers.put("paramToCookie" , ParamToCookieSecurity.class.getName());
 
         setTransfers(transfers);
     }
